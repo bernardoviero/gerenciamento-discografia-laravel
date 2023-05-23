@@ -13,7 +13,7 @@
                     </td>
                     <td>
                         <a href="/excluir-album?id_album={{ $album->id_album }}"
-                            onclick="return confirm('Tem certeza que deseja excluir esse Album?')">
+                            onclick="return confirm('Tem certeza que deseja excluir esse Album?')" title="Excluir Album">
                             <img src="/assets/images/lixeira.png" />
                         </a>
                     </td>
@@ -30,7 +30,8 @@
                         <td>{{ $faixa->duracao }}</td>
                         <td>
                             <a href="/excluir-faixa?id_faixa={{ $faixa->id_faixa }}"
-                                onclick="return confirm('Tem certeza que deseja excluir essa Faixa?')">
+                                onclick="return confirm('Tem certeza que deseja excluir essa Faixa?')"
+                                title="Excluir Faixa">
                                 <img src="/assets/images/lixeira.png" />
                             </a>
                         </td>

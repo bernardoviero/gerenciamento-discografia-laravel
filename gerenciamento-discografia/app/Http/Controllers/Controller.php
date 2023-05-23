@@ -14,11 +14,17 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-    public function listar(){
-        $data['albums'] = Album::where('excluido',0)->get();
-        $data['faixas'] = Faixa::where('excluido',0)->get();
+    public function listar(Request $request){
+        if(!isset($request->search)){
+            $data['albums'] = Album::where('excluido',0)->get();
+            $data['faixas'] = Faixa::where('excluido',0)->get();
+        }else{
+            $busca = $request->search;
+            $data['albums'] = Album::where('excluido',0)->where('nome','like','%'.$busca.'%')->get();
+            $data['faixas'] = Faixa::where('excluido',0)->get();
+        }
 
-        return view('layouts/inicio',$data);
+        return view('layouts.inicio',$data);
     }
 
     public function criar_album(){
