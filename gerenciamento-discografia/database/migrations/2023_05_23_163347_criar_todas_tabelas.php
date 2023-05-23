@@ -12,6 +12,7 @@ return new class extends Migration
         {
             $table->increments('id_album');
             $table->string('nome', 100)->nullable(false);
+            $table->integer('ano')->nullable(false);
             $table->string('descricao', 255)->nullable(false);
             $table->integer('excluido')->default(0);
             $table->timestamps();
