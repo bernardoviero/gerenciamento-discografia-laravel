@@ -61,7 +61,7 @@ label {
     margin-bottom: 5px;
 }
 
-input[type="text"] {
+.input-container input[type="text"] {
     height: 40px;
     margin-left: 16px;
     width: 580px;
@@ -102,7 +102,50 @@ input[type="text"] {
 .mt-20 {
     margin-top: 20px;
 }
+.form-container-adicao {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-.color-red{
-    color: red;
+.form-container-adicao form {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container-adicao label {
+    color: black;
+    font-family: "Inter", sans-serif;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+    display: inline-block;
+}
+
+.form-container-adicao input[type="text"],
+.form-container-adicao input[type="number"],
+.form-container-adicao textarea,
+.form-container-adicao select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.form-container-adicao input[type="submit"] {
+    background-color: #1083cf;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-container-adicao input[type="submit"]:hover {
+    background-color: #0b1b63;
 }

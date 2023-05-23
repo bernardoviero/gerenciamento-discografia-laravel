@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Redirect;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
-
     public function listar(Request $request){
         if(!isset($request->search)){
             $data['albums'] = Album::where('excluido',0)->get();
@@ -24,14 +23,46 @@ class Controller extends BaseController
             $data['faixas'] = Faixa::where('excluido',0)->get();
         }
 
-        return view('layouts.inicio',$data);
+        return view('inicio',$data);
     }
 
-    public function criar_album(){
-        return view('adicionar-album');
+    public function criar_album(Request $request){
+
+        if($request->isMethod('get')){
+            return view('adicionar-album');
+        }else{
+            $request->validate([
+                'nome' => 'required',
+                'descricao' => 'required',
+                'ano' => 'required|numeric'
+            ]);
+
+            $dados = $request->only('nome', 'descricao', 'ano');
+            $novoAlbum = Album::create($dados);
+            $novoAlbum->save();
+            return redirect()->route('listar');
+        }
     }
-    public function criar_faixa(){
-        return view('adicionar-album');
+    public function criar_faixa(Request $request){
+
+        if($request->isMethod('get')){
+            $opcoesAlbums = Album::where('excluido',0)
+                ->select('id_album as value','nome as label')
+                ->get()->toArray();
+            return view('adicionar-faixa')->with('opcoesAlbums',$opcoesAlbums);
+        }else{
+            $request->validate([
+                'nome' => 'required',
+                'duracao' => 'required',
+                'id_album' => 'required'
+            ]);
+
+            $dados = $request->only('nome', 'duracao', 'id_album');
+            $novaFaixa = Faixa::create($dados);
+            $novaFaixa->save();
+            return redirect()->route('listar');
+        }
+
     }
 
     public function excluir_faixa(Request $request)
