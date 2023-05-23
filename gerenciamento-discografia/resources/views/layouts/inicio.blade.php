@@ -11,6 +11,12 @@
                     <td colspan="2" class="album-info">
                         Album: {{ $album->nome }}, {{ $album->ano }}
                     </td>
+                    <td>
+                        <a href="/excluir-album?id_album={{ $album->id_album }}"
+                            onclick="return confirm('Tem certeza que deseja excluir esse Album?')">
+                            <img src="/assets/images/lixeira.png" />
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <td class="faixa-header">N°</td>
@@ -22,6 +28,12 @@
                         <td>{{ $faixa->id_faixa }}</td>
                         <td>{{ $faixa->nome }}</td>
                         <td>{{ $faixa->duracao }}</td>
+                        <td>
+                            <a href="/excluir-faixa?id_faixa={{ $faixa->id_faixa }}"
+                                onclick="return confirm('Tem certeza que deseja excluir essa Faixa?')">
+                                <img src="/assets/images/lixeira.png" />
+                            </a>
+                        </td>
                     </tr>
                 @endforeach
             @endforeach

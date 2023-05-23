@@ -102,3 +102,7 @@ input[type="text"] {
 .mt-20 {
     margin-top: 20px;
 }
+
+.color-red{
+    color: red;
+}
