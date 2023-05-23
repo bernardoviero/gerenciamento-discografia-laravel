@@ -24,6 +24,7 @@ return new class extends Migration
             $table->integer('id_album')->unsigned();
             $table->foreign('id_album')->references('id_album')->on('albuns');
             $table->string('nome', 100)->nullable(false);
+            $table->string('duracao', 100)->nullable(false);
             $table->integer('excluido')->default(0);
             $table->timestamps();
         });

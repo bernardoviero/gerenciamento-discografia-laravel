@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class Faixa extends Authenticatable
 {
     protected $table = 'faixas';
 
@@ -12,6 +12,7 @@ class User extends Authenticatable
     protected $fillable = [
         'id_album',
         'nome',
+        'duracao',
         'excluido'
     ];
 }
