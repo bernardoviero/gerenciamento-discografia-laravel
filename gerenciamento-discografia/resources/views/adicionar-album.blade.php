@@ -1,4 +1,4 @@
-@include('componentes.header')
+@include('componentes.header', ['titulo' => 'Adicionar Álbum'])
 <div class="corpo-principal">
     <div class="form-container-adicao">
         <form method="POST" action="{{ route('criarAlbum') }}">
