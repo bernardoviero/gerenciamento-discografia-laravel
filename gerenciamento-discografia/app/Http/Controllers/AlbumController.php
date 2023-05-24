@@ -19,6 +19,7 @@ class AlbumController extends Controller
         $dados = $request->only('nome', 'descricao', 'ano');
         $novoAlbum = Album::create($dados);
         $novoAlbum->save();
+
         return redirect()->route('index');
     }
 
@@ -44,6 +45,7 @@ class AlbumController extends Controller
         $album = Album::find($idAlbum);
         $album->excluido = 1;
         $album->save();
+
         return Redirect::back();
     }
 }

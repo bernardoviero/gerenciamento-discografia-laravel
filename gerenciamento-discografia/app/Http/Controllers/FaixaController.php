@@ -18,6 +18,7 @@ class FaixaController extends Controller
         $dados = $request->only('nome', 'duracao', 'id_album');
         $novaFaixa = Faixa::create($dados);
         $novaFaixa->save();
+
         return redirect()->route('index');
     }
 
@@ -25,13 +26,13 @@ class FaixaController extends Controller
         $opcoesAlbums = Album::where('excluido',0)
             ->select('id_album as value','nome as label')
             ->get()->toArray();
+
         return view('adicionar-faixa')->with('opcoesAlbums',$opcoesAlbums);
     }
 
     public function excluirFaixa(Request $request, $id)
     {
         $idFaixa = $id;
-
         $faixa = Faixa::find($idFaixa);
         $faixa->excluido = 1;
         $faixa->save();
