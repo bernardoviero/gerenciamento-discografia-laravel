@@ -3,14 +3,14 @@
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/',[Controller::class,'listar'])->name('listar');
-Route::post('/',[Controller::class,'listar'])->name('buscar');
+Route::get('/',[Controller::class,'index'])->name('index');
+Route::post('/',[Controller::class,'filtrar'])->name('filtrar');
 
-Route::get('/adicionar-album', [Controller::class, 'criar_album'])->name('criar_album');
-Route::post('/adicionar-album', [Controller::class, 'criar_album'])->name('criar_album');
+Route::get('/adicionar-album', [Controller::class, 'formularioAlbum'])->name('formularioAlbum');
+Route::post('/adicionar-album', [Controller::class, 'criarAlbum'])->name('criarAlbum');
 
-Route::get('/adicionar-faixa',[Controller::class,'criar_faixa'])->name('criar_faixa');
-Route::post('/adicionar-faixa',[Controller::class,'criar_faixa'])->name('criar_faixa');
+Route::get('/adicionar-faixa',[Controller::class,'formularioFaixa'])->name('formularioFaixa');
+Route::post('/adicionar-faixa',[Controller::class,'criarFaixa'])->name('criarFaixa');
 
-Route::get('/excluir-album',[Controller::class,'excluir_album']);
-Route::get('/excluir-faixa',[Controller::class,'excluir_faixa']);
+Route::post('/excluir-album',[Controller::class,'excluirAlbum'])->name('excluirAlbum');;
+Route::post('/excluir-faixa',[Controller::class,'excluirFaixa'])->name('excluirFaixa');;
