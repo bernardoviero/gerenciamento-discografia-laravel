@@ -1,7 +1,7 @@
 body {
     background-image: url("../images/background.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center center;
 }
 
@@ -93,15 +93,14 @@ label {
 .album-info {
     display: flex;
     align-items: center;
-    font-size: 18px;
-    font-family: "Inter", sans-serif;
+    text-align: center;
+    font-size: 22px;
     font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-right: -200px;
+    margin-top: 20px;
 }
 
-.album-info img {
-    margin-right: 10px; /* Ajuste o espaçamento entre o texto e a imagem conforme necessário */
-}
 
 .faixa-header {
     color: #000000b7;

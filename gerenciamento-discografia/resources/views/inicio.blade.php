@@ -20,13 +20,13 @@
             @foreach ($albums as $album)
                 <tr>
                     <td class="album-info">
-                        Album: {{ $album->nome }}, {{ $album->ano }}
+                        Álbum: {{ $album->nome }}, {{ $album->ano }}
                         <form action="{{ route('excluirAlbum', ['id' => $album->id_album]) }}" method="POST"
                             onsubmit="return confirm('Tem certeza que deseja excluir esse Álbum?')">
                             @csrf
                             @method('DELETE')
                             <button type="submit" title="Excluir Album"
-                                style="margin-left:30px; background: none; border: none; padding: 0; cursor: pointer;">
+                                style="margin-left:20px; background: none; border: none; padding: 5%; cursor: pointer;">
                                 <img src="/assets/images/lixeira.png" />
                             </button>
                         </form>
@@ -43,7 +43,7 @@
                         <td>{{ $faixa->nome }}</td>
                         <td>{{ $faixa->duracao }}</td>
                         <td>
-                            <form action="{{ route('excluirFaixa', ['id' => $faixa->id_album]) }}" method="POST"
+                            <form action="{{ route('excluirFaixa', ['id' => $faixa->id_faixa]) }}" method="POST"
                                 onsubmit="return confirm('Tem certeza que deseja excluir essa Faixa?')">
                                 @csrf
                                 @method('DELETE')
