@@ -14,6 +14,7 @@
                 'for' => 'nome',
                 'placeholder' => 'Digite o nome da Faixa',
                 'class' => 'nome-input',
+                'tamanhoMaximo' => '100',
             ])
             @include('componentes.input', [
                 'label' => 'Duração da Faixa',
@@ -22,6 +23,8 @@
                 'name' => 'duracao',
                 'for' => 'duracao',
                 'placeholder' => '02:35',
+                'tamanhoMaximo' => '5',
+                'formatarHora' => 'formatTime(this)',
             ])
             @include('componentes.select', [
                 'label' => 'Álbum da Faixa',

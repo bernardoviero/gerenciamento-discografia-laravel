@@ -15,7 +15,9 @@
                 'for' => 'nome',
                 'placeholder' => 'Digite o nome do Álbum',
                 'class' => 'nome-input',
+                'tamanhoMaximo' => '100',
             ])
+
             @include('componentes.input', [
                 'label' => 'Ano do Álbum',
                 'id' => 'ano',
@@ -23,7 +25,9 @@
                 'name' => 'ano',
                 'for' => 'ano',
                 'placeholder' => 'Digite o ano do Álbum',
+                'tamanhoMaximo' => '100',
             ])
+
             @include('componentes.input-text-area', [
                 'label' => 'Descrição do Álbum',
                 'id' => 'descricao',
