@@ -19,16 +19,14 @@
         <table class="tabela-albums">
             @foreach ($albums as $album)
                 <tr>
-                    <td colspan="2" class="album-info">
+                    <td class="album-info">
                         Album: {{ $album->nome }}, {{ $album->ano }}
-                    </td>
-                    <td>
                         <form action="{{ route('excluirAlbum', ['id' => $album->id_album]) }}" method="POST"
                             onsubmit="return confirm('Tem certeza que deseja excluir esse Álbum?')">
                             @csrf
                             @method('DELETE')
                             <button type="submit" title="Excluir Album"
-                                style="background: none; border: none; padding: 0; cursor: pointer;">
+                                style="margin-left:30px; background: none; border: none; padding: 0; cursor: pointer;">
                                 <img src="/assets/images/lixeira.png" />
                             </button>
                         </form>

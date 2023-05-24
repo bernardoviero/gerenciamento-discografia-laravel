@@ -2,8 +2,9 @@ body {
     background-image: url("../images/background.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position:  center center;
+    background-position: center center;
 }
+
 html {
     height: 100%;
 }
@@ -28,7 +29,7 @@ html {
 }
 
 .texto {
-    margin-left: 370px;
+    margin-left: 340px;
     font-size: 35px;
     font-family: "Inter", sans-serif;
     font-weight: 200;
@@ -55,7 +56,7 @@ html {
 
 label {
     display: block;
-    color: #ffffff;
+    color: #000000b7;
     margin-left: 16px;
     margin-top: 10px;
     margin-bottom: 5px;
@@ -90,12 +91,20 @@ label {
 }
 
 .album-info {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-family: "Inter", sans-serif;
     font-weight: bold;
-    font-size: 1.2em;
+    margin-right: -200px;
+}
+
+.album-info img {
+    margin-right: 10px; /* Ajuste o espaçamento entre o texto e a imagem conforme necessário */
 }
 
 .faixa-header {
-    color: gray;
+    color: #000000b7;
     font-size: 0.9em;
 }
 
