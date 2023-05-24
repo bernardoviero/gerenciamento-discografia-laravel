@@ -45,28 +45,22 @@ class Controller extends BaseController
         return view('adicionar-album');
     }
     public function criarFaixa(Request $request){
-
-        if($request->isMethod('get')){
-            $opcoesAlbums = Album::where('excluido',0)
-                ->select('id_album as value','nome as label')
-                ->get()->toArray();
-            return view('adicionar-faixa')->with('opcoesAlbums',$opcoesAlbums);
-        }else{
-            $request->validate([
-                'nome' => 'required',
-                'duracao' => 'required',
-                'id_album' => 'required'
-            ]);
-
-            $dados = $request->only('nome', 'duracao', 'id_album');
-            $novaFaixa = Faixa::create($dados);
-            $novaFaixa->save();
-            return redirect()->route('listar');
-        }
+        $request->validate([
+            'nome' => 'required',
+            'duracao' => 'required',
+            'id_album' => 'required'
+        ]);
+        $dados = $request->only('nome', 'duracao', 'id_album');
+        $novaFaixa = Faixa::create($dados);
+        $novaFaixa->save();
+        return redirect()->route('index');
     }
 
     public function formularioFaixa(Request $request){
-        return view('adicionar-faixa');
+        $opcoesAlbums = Album::where('excluido',0)
+            ->select('id_album as value','nome as label')
+            ->get()->toArray();
+        return view('adicionar-faixa')->with('opcoesAlbums',$opcoesAlbums);
     }
 
     public function excluirFaixa(Request $request)

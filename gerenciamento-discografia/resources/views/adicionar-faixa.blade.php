@@ -1,7 +1,7 @@
 @include('componentes.header')
 <div class="corpo-principal">
     <div class="form-container-adicao">
-        <form method="POST" action="{{ route('criar_faixa') }}">
+        <form method="POST" action="{{ route('criarFaixa') }}">
             @csrf
             <div>
                 <button type="button" onclick="window.location.href='/'" class="botao">Voltar</button>

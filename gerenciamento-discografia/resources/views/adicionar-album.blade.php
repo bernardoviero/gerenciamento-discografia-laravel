@@ -1,7 +1,7 @@
 @include('componentes.header')
 <div class="corpo-principal">
     <div class="form-container-adicao">
-        <form method="POST" action="{{ route('criar_album') }}">
+        <form method="POST" action="{{ route('criarAlbum') }}">
             <div>
                 <button type="button" onclick="window.location.href='/'" class="botao">Voltar</button>
             </div>

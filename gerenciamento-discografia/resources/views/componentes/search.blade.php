@@ -1,4 +1,4 @@
-<form id="search-input" action="{{ route('buscar') }}" method="POST">
+<form id="search-input" action="{{ route('filtrar') }}" method="POST">
     @csrf
     <div class="form-container">
         <label for="search-input">{{ $label ?? 'Digite uma palavra-chave' }}</label>
