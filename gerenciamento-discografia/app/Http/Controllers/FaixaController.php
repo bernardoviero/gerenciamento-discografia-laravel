@@ -11,7 +11,7 @@ class FaixaController extends Controller
 {
     public function criarFaixa(Request $request){
         $request->validate([
-            'nome' => 'required',
+            'nome' => 'required|min:3|max:100',
             'duracao' => 'required',
             'id_album' => 'required'
         ]);

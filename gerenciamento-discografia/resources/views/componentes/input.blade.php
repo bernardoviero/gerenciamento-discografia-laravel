@@ -1,6 +1,7 @@
 <label for="{{ $for }}">{{ $label }}:</label>
-<input type="{{ $type }}" maxlength="{{ $tamanhoMaximo }}" id="{{ $id }}" name="{{ $name }}"
-    placeholder="{{ $placeholder }}" {{ isset($formatarHora) ? 'oninput=' . $formatarHora : '' }}>
+<input type="{{ $type }}" maxlength="{{ $tamanhoMaximo }}" minlength="{{ $tamanhoMinimo }}" id="{{ $id }}"
+    name="{{ $name }}" placeholder="{{ $placeholder }}" {{ isset($pattern) ? 'pattern=' . $pattern : '' }}
+    {{ isset($formatarHora) ? 'oninput=' . $formatarHora : '' }}>
 <br><br>
 
 <script>

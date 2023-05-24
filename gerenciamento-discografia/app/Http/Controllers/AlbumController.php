@@ -11,9 +11,9 @@ class AlbumController extends Controller
 {
     public function criarAlbum(Request $request){
         $request->validate([
-            'nome' => 'required',
-            'descricao' => 'required',
-            'ano' => 'required|numeric'
+            'nome' => 'required|min:3|max:100',
+            'descricao' => 'required|max:255',
+            'ano' => 'required|numeric|max:2030|min:1960'
         ]);
 
         $dados = $request->only('nome', 'descricao', 'ano');

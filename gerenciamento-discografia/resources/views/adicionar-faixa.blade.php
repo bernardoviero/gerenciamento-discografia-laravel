@@ -6,6 +6,15 @@
             <div>
                 <button type="button" onclick="window.location.href='/'" class="botao">Voltar</button>
             </div>
+            @if ($errors->any())
+                <div class="alertas">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             @include('componentes.input', [
                 'label' => 'Nome da Faixa',
                 'id' => 'nome',
@@ -15,6 +24,7 @@
                 'placeholder' => 'Digite o nome da Faixa',
                 'class' => 'nome-input',
                 'tamanhoMaximo' => '100',
+                'tamanhoMinimo' => '3',
             ])
             @include('componentes.input', [
                 'label' => 'Duração da Faixa',
@@ -25,6 +35,7 @@
                 'placeholder' => '02:35',
                 'tamanhoMaximo' => '5',
                 'formatarHora' => 'formatTime(this)',
+                'tamanhoMinimo' => '5',
             ])
             @include('componentes.select', [
                 'label' => 'Álbum da Faixa',

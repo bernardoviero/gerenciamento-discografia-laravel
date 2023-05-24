@@ -2,6 +2,7 @@ body {
     background-image: url("../images/background.png");
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-x: hidden;
     width: 100%;
 }
 
@@ -177,4 +178,23 @@ label {
     justify-content: flex-end;
     margin-top: 20px;
     margin-right: 10px;
+}
+
+.alertas {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+}
+
+.alertas ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.alertas li {
+    margin-bottom: 5px;
 }

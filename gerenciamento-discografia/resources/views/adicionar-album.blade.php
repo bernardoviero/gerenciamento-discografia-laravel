@@ -5,6 +5,15 @@
             <div>
                 <button type="button" onclick="window.location.href='/'" class="botao">Voltar</button>
             </div>
+            @if ($errors->any())
+                <div class="alertas">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
             @csrf
             @include('componentes.input', [
@@ -16,6 +25,7 @@
                 'placeholder' => 'Digite o nome do Álbum',
                 'class' => 'nome-input',
                 'tamanhoMaximo' => '100',
+                'tamanhoMinimo' => '3',
             ])
 
             @include('componentes.input', [
@@ -25,7 +35,9 @@
                 'name' => 'ano',
                 'for' => 'ano',
                 'placeholder' => 'Digite o ano do Álbum',
-                'tamanhoMaximo' => '100',
+                'tamanhoMaximo' => '2030',
+                'tamanhoMinimo' => '1970',
+                'patterns' => '\d{4}',
             ])
 
             @include('componentes.input-text-area', [
