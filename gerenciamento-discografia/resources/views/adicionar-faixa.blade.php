@@ -3,6 +3,9 @@
     <div class="form-container-adicao">
         <form method="POST" action="{{ route('criar_faixa') }}">
             @csrf
+            <div>
+                <button type="button" onclick="window.location.href='/'" class="botao">Voltar</button>
+            </div>
             @include('componentes.input', [
                 'label' => 'Nome da Faixa',
                 'id' => 'nome',

@@ -5,6 +5,17 @@
         @include('componentes.search')
     </div>
     <div>
+        <div class="botoes-adicionar">
+            <a href="adicionar-album"> @include('componentes.button', [
+                'texto' => 'Adicionar Álbum',
+                'title' => 'Adicionar Álbum',
+            ]) </a>
+            <a href="adicionar-faixa"> @include('componentes.button', [
+                'texto' => 'Adicionar Faixa',
+                'title' => 'Adicionar Faixa',
+            ]) </a>
+        </div>
+
         <table class="tabela-albums">
             @foreach ($albums as $album)
                 <tr>
