@@ -25,7 +25,11 @@ class Controller extends BaseController
         $data['albums'] = Album::where('excluido',0)->where('nome','like','%'.$busca.'%')->get();
         $data['faixas'] = Faixa::where('excluido',0)->get();
 
-        return view('inicio',$data);
+        if($busca != null){
+            return view('inicio',$data);
+        }else{
+            return redirect()->route('index');
+        }
     }
 
     public function criarAlbum(Request $request){
@@ -63,9 +67,9 @@ class Controller extends BaseController
         return view('adicionar-faixa')->with('opcoesAlbums',$opcoesAlbums);
     }
 
-    public function excluirFaixa(Request $request)
+    public function excluirFaixa(Request $request, $id)
     {
-        $idFaixa = $request->id_faixa;
+        $idFaixa = $id;
 
         $faixa = Faixa::find($idFaixa);
         $faixa->excluido = 1;
@@ -74,13 +78,12 @@ class Controller extends BaseController
         return Redirect::back();
     }
 
-    public function excluirAlbum(Request $request){
-        $idAlbum = $request->id_album;
+    public function excluirAlbum(Request $request, $id){
+        $idAlbum = $id;
 
         $album = Album::find($idAlbum);
         $album->excluido = 1;
         $album->save();
-
         return Redirect::back();
     }
 }

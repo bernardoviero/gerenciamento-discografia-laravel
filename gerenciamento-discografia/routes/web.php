@@ -12,5 +12,5 @@ Route::post('/adicionar-album', [Controller::class, 'criarAlbum'])->name('criarA
 Route::get('/adicionar-faixa',[Controller::class,'formularioFaixa'])->name('formularioFaixa');
 Route::post('/adicionar-faixa',[Controller::class,'criarFaixa'])->name('criarFaixa');
 
-Route::post('/excluir-album',[Controller::class,'excluirAlbum'])->name('excluirAlbum');;
-Route::post('/excluir-faixa',[Controller::class,'excluirFaixa'])->name('excluirFaixa');;
+Route::delete('/excluir-album/{id}',[Controller::class,'excluirAlbum'])->name('excluirAlbum');
+Route::delete('/excluir-faixa/{id}',[Controller::class,'excluirFaixa'])->name('excluirFaixa');

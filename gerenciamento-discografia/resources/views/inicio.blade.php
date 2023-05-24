@@ -23,10 +23,15 @@
                         Album: {{ $album->nome }}, {{ $album->ano }}
                     </td>
                     <td>
-                        <a href="/excluir-album?id_album={{ $album->id_album }}"
-                            onclick="return confirm('Tem certeza que deseja excluir esse Album?')" title="Excluir Album">
-                            <img src="/assets/images/lixeira.png" />
-                        </a>
+                        <form action="{{ route('excluirAlbum', ['id' => $album->id_album]) }}" method="POST"
+                            onsubmit="return confirm('Tem certeza que deseja excluir esse Álbum?')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" title="Excluir Album"
+                                style="background: none; border: none; padding: 0; cursor: pointer;">
+                                <img src="/assets/images/lixeira.png" />
+                            </button>
+                        </form>
                     </td>
                 </tr>
                 <tr>
@@ -40,11 +45,15 @@
                         <td>{{ $faixa->nome }}</td>
                         <td>{{ $faixa->duracao }}</td>
                         <td>
-                            <a href="/excluir-faixa?id_faixa={{ $faixa->id_faixa }}"
-                                onclick="return confirm('Tem certeza que deseja excluir essa Faixa?')"
-                                title="Excluir Faixa">
-                                <img src="/assets/images/lixeira.png" />
-                            </a>
+                            <form action="{{ route('excluirFaixa', ['id' => $faixa->id_album]) }}" method="POST"
+                                onsubmit="return confirm('Tem certeza que deseja excluir essa Faixa?')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" title="Excluir Faixa"
+                                    style="background: none; border: none; padding: 0; cursor: pointer;">
+                                    <img src="/assets/images/lixeira.png" />
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
