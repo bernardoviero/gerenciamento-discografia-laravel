@@ -4,7 +4,7 @@
         <form method="POST" action="{{ route('criarAlbum') }}">
             <div>
                 <button type="button" onclick="window.location.href='/'" style="margin-left: 0;"
-                    class="button">Voltar</button>
+                    class="botao">Voltar</button>
             </div>
             @if ($errors->any())
                 <div class="alertas">

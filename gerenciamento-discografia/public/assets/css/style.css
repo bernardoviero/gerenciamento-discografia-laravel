@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-ExtraLight.woff') format('truetype');
+
+    font-family: 'Inter-Bold';
+    src: url('/fonts/Inter-ExtraBold.woff') format('truetype');
+}
+
 body {
     background-image: url("../images/background.png");
     background-repeat: no-repeat;
@@ -29,11 +37,11 @@ html {
     margin-left: 30px;
 }
 
-.texto {
+.titulo-header {
     margin-left: 340px;
-    font-size: 35px;
-    font-family: "Inter", sans-serif;
-    font-weight: 200;
+    font-size: 38px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 30;
 }
 
 .corpo-principal {
@@ -118,7 +126,7 @@ label {
     border-radius: 20px;
 }
 
-.button {
+.botao {
     width: 150px;
     height: 40px;
     background-color: #1083cf;
@@ -169,50 +177,45 @@ label {
     margin-right: 10px;
 }
 
-.row {
+.linha {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
-    margin-left: 20px;
     margin-right: 10px;
 }
 
-.column {
+.coluna {
     padding: 5px;
     margin-right: 20px;
+    margin-left: 5px;
 }
 
-.column.id {
-    width: 40px;
-}
-
-.column.faixa {
+.coluna.faixa {
     flex-grow: 1;
 }
 
-.column.duracao {
+.coluna.duracao,
+.coluna.acao,
+.coluna.id {
     width: 40px;
     text-align: center;
 }
 
-.column.acao {
-    width: 40px;
-    text-align: center;
-}
-
-.album-title {
+.album-titulo {
     flex-grow: 1;
     font-size: 18px;
     color: #000000;
+    font-family: 'Inter-Bold', sans-serif;
+    font-weight: 50;
 }
 
-.delete-icon {
+.icone-exclusao {
     display: flex;
     align-items: center;
     margin-right: 450px;
 }
 
-.delete-button {
+.botao-exclusao {
     background: none;
     border: none;
     padding: 0;
@@ -221,8 +224,16 @@ label {
 }
 
 .exibir-informacoes {
-    font-size: 16px;
+    font-size: 17px;
     font-family: "Inter", sans-serif;
-    font-weight: 300;
-    color: #000000ad;
+    font-weight: 100;
+    color: #000000c5;
+}
+
+.mensagem-sucesso {
+    background-color: #dff0d8;
+    color: #3c763d;
+    padding: 10px;
+    border: 1px solid #d6e9c6;
+    border-radius: 4px;
 }

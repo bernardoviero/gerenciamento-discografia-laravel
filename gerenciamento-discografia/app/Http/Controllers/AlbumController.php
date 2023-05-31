@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Redirect;
 
 class AlbumController extends Controller
 {
-    public function criarAlbum(Request $request){
+    public function criarAlbum(Request $request)
+    {
         $request->validate([
             'nome' => 'required|min:3|max:100',
             'descricao' => 'required|max:255',
@@ -20,32 +21,35 @@ class AlbumController extends Controller
         $novoAlbum = Album::create($dados);
         $novoAlbum->save();
 
-        return redirect()->route('index');
+        return redirect()->route('index')->with('success', 'Álbum ' . $novoAlbum->nome . ' criado com sucesso!');
     }
 
-    public function filtrar(Request $request){
+    public function filtrar(Request $request)
+    {
         $busca = $request->search;
-        $data['albums'] = Album::where('excluido',0)->where('nome','like','%'.$busca.'%')->get();
-        $data['faixas'] = Faixa::where('excluido',0)->get();
+        $data['albums'] = Album::where('excluido', 0)->where('nome', 'like', '%' . $busca . '%')->get();
+        $data['faixas'] = Faixa::where('excluido', 0)->get();
 
-        if($busca != null){
-            return view('inicio',$data);
-        }else{
+        if ($busca != null) {
+            return view('inicio', $data);
+        } else {
             return redirect()->route('index');
         }
     }
 
-    public function formularioAlbum(Request $request){
+    public function formularioAlbum(Request $request)
+    {
         return view('adicionar-album');
     }
 
-    public function excluirAlbum(Request $request, $id){
+    public function excluirAlbum(Request $request, $id)
+    {
         $idAlbum = $id;
 
         $album = Album::find($idAlbum);
         $album->excluido = 1;
         $album->save();
 
-        return Redirect::back();
+        return Redirect::back()->with('success', 'Álbum ' . $album->nome . ' excluído com sucesso!');
     }
 }

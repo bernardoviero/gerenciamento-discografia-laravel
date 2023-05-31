@@ -13,6 +13,6 @@
     <div class="header-discografia">
         <div class="logo-container">
             <img src="assets/images/logo.png" width="220" height="90">
-            <div class="texto">Discografia</div>
+            <div class="titulo-header">Discografia</div>
         </div>
     </div>

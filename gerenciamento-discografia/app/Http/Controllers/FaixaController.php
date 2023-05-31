@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Redirect;
 
 class FaixaController extends Controller
 {
-    public function criarFaixa(Request $request){
+    public function criarFaixa(Request $request)
+    {
         $request->validate([
             'nome' => 'required|min:3|max:100',
             'duracao' => 'required',
@@ -19,15 +20,16 @@ class FaixaController extends Controller
         $novaFaixa = Faixa::create($dados);
         $novaFaixa->save();
 
-        return redirect()->route('index');
+        return redirect()->route('index')->with('success', 'Faixa ' . $novaFaixa->nome . ' criada com sucesso!');
     }
 
-    public function formularioFaixa(Request $request){
-        $opcoesAlbums = Album::where('excluido',0)
-            ->select('id_album as value','nome as label')
+    public function formularioFaixa(Request $request)
+    {
+        $opcoesAlbums = Album::where('excluido', 0)
+            ->select('id_album as value', 'nome as label')
             ->get()->toArray();
 
-        return view('adicionar-faixa')->with('opcoesAlbums',$opcoesAlbums);
+        return view('adicionar-faixa')->with('opcoesAlbums', $opcoesAlbums);
     }
 
     public function excluirFaixa(Request $request, $id)
@@ -37,6 +39,6 @@ class FaixaController extends Controller
         $faixa->excluido = 1;
         $faixa->save();
 
-        return Redirect::back();
+        return Redirect::back()->with('success', 'Faixa ' . $faixa->nome . ' excluída com sucesso!');
     }
 }
