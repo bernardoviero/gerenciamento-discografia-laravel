@@ -39,7 +39,7 @@
                 </tr>
                 @foreach ($faixas->where('id_album', $album->id_album) as $faixa)
                     <tr class="faixa-header mt-20">
-                        <td>{{ $faixa->id_faixa }}</td>
+                        <td style="width: 35%">{{ $faixa->id_faixa }}</td>
                         <td>{{ $faixa->nome }}</td>
                         <td>{{ $faixa->duracao }}</td>
                         <td>
