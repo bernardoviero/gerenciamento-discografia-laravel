@@ -24,7 +24,7 @@
                         <form action="{{ route('excluirAlbum', ['id' => $album->id_album]) }}" method="POST"
                             onsubmit="return confirm('Tem certeza que deseja excluir esse Álbum?')">
                             @csrf
-                            @method('DELETE')
+                            @method('PUT')
                             <button type="submit" title="Excluir Album"
                                 style="margin-left:20px; background: none; border: none; padding: 5%; cursor: pointer;">
                                 <img src="/assets/images/lixeira.png" />
@@ -46,7 +46,7 @@
                             <form action="{{ route('excluirFaixa', ['id' => $faixa->id_faixa]) }}" method="POST"
                                 onsubmit="return confirm('Tem certeza que deseja excluir essa Faixa?')">
                                 @csrf
-                                @method('DELETE')
+                                @method('PUT')
                                 <button type="submit" title="Excluir Faixa"
                                     style="background: none; border: none; padding: 0; cursor: pointer;">
                                     <img src="/assets/images/lixeira.png" />
