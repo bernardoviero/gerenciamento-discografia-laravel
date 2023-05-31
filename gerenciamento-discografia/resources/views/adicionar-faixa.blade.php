@@ -45,7 +45,7 @@
                 'for' => 'id_album',
                 'opcoes' => $opcoesAlbums,
             ])
-            <input type="submit" style="background-color: #2e9c18;" value="Criar Faixa">
+            <input type="submit" style="margin-left: 620px; background-color: #2e9c18;" value="Criar Faixa">
         </form>
     </div>
 </div>

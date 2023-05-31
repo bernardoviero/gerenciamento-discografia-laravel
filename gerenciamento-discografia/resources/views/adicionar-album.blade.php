@@ -48,7 +48,7 @@
                 'for' => 'descricao',
                 'placeholder' => 'Digite uma descrição para o Álbum',
             ])
-            <input type="submit" style="background-color: #2e9c18; " value="Criar Álbum">
+            <input type="submit" style="margin-left: 620px; background-color: #2e9c18; " value="Criar Álbum">
         </form>
     </div>
 </div>
