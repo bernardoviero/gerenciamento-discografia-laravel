@@ -4,7 +4,8 @@
         <form method="POST" action="{{ route('criarFaixa') }}">
             @csrf
             <div>
-                <button type="button" onclick="window.location.href='/'" class="botao">Voltar</button>
+                <button type="button" onclick="window.location.href='/'" style="margin-left: 0;"
+                    class="button">Voltar</button>
             </div>
             @if ($errors->any())
                 <div class="alertas">
@@ -44,7 +45,7 @@
                 'for' => 'id_album',
                 'opcoes' => $opcoesAlbums,
             ])
-            <input type="submit" value="Criar Faixa">
+            <input type="submit" style="background-color: #2e9c18;" value="Criar Faixa">
         </form>
     </div>
 </div>

@@ -3,7 +3,8 @@
     <div class="form-container-adicao">
         <form method="POST" action="{{ route('criarAlbum') }}">
             <div>
-                <button type="button" onclick="window.location.href='/'" class="botao">Voltar</button>
+                <button type="button" onclick="window.location.href='/'" style="margin-left: 0;"
+                    class="button">Voltar</button>
             </div>
             @if ($errors->any())
                 <div class="alertas">
@@ -47,7 +48,7 @@
                 'for' => 'descricao',
                 'placeholder' => 'Digite uma descrição para o Álbum',
             ])
-            <input type="submit" value="Criar Álbum">
+            <input type="submit" style="background-color: #2e9c18; " value="Criar Álbum">
         </form>
     </div>
 </div>

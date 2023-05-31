@@ -15,34 +15,33 @@
                 'title' => 'Adicionar Faixa',
             ]) </a>
         </div>
-
-        <table class="tabela-albums">
+        <section class="exibir-informacoes">
             @foreach ($albums as $album)
-                <tr>
-                    <td class="album-info">
-                        Álbum: {{ $album->nome }}, {{ $album->ano }}
+                <div class="album-header">
+                    <div class="album-title">Álbum: {{ $album->nome }}, {{ $album->ano }}</div>
+                    <div class="delete-icon">
                         <form action="{{ route('excluirAlbum', ['id' => $album->id_album]) }}" method="POST"
                             onsubmit="return confirm('Tem certeza que deseja excluir esse Álbum?')">
                             @csrf
                             @method('PUT')
-                            <button type="submit" title="Excluir Album"
-                                style="margin-left:20px; background: none; border: none; padding: 5%; cursor: pointer;">
+                            <button type="submit" title="Excluir Album" class="delete-button">
                                 <img src="/assets/images/lixeira.png" />
                             </button>
                         </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="faixa-header">N°</td>
-                    <td class="faixa-header">Faixa</td>
-                    <td class="faixa-header">Duração</td>
-                </tr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column id">N°</div>
+                    <div class="column faixa">Faixa</div>
+                    <div class="column duracao">Duração</div>
+                    <div class="column acao">Ação</div>
+                </div>
                 @foreach ($faixas->where('id_album', $album->id_album) as $faixa)
-                    <tr class="faixa-header mt-20">
-                        <td style="width: 35%">{{ $faixa->id_faixa }}</td>
-                        <td>{{ $faixa->nome }}</td>
-                        <td>{{ $faixa->duracao }}</td>
-                        <td>
+                    <div class="row">
+                        <div class="column id">{{ $faixa->id_faixa }}</div>
+                        <div class="column faixa">{{ $faixa->nome }}</div>
+                        <div class="column duracao">{{ $faixa->duracao }}</div>
+                        <div class="column acao">
                             <form action="{{ route('excluirFaixa', ['id' => $faixa->id_faixa]) }}" method="POST"
                                 onsubmit="return confirm('Tem certeza que deseja excluir essa Faixa?')">
                                 @csrf
@@ -52,11 +51,11 @@
                                     <img src="/assets/images/lixeira.png" />
                                 </button>
                             </form>
-                        </td>
-                    </tr>
+                        </div>
+                    </div>
                 @endforeach
             @endforeach
-        </table>
+        </section>
     </div>
 </div>
 

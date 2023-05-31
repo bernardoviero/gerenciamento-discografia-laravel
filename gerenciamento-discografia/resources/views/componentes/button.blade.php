@@ -1,1 +1,1 @@
-<button title="{{ $title }}" class="botao">{{ $texto }}</button>
+<button title="{{ $title }}" class="button">{{ $texto }}</button>

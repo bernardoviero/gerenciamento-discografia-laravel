@@ -57,8 +57,8 @@ html {
 
 label {
     display: block;
+    font-size: 20px;
     color: #000000b7;
-    margin-left: 16px;
     margin-top: 10px;
     margin-bottom: 5px;
 }
@@ -74,43 +74,6 @@ label {
     outline: none;
 }
 
-.search-button {
-    width: 150px;
-    height: 40px;
-    background-color: #1083cf;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-left: 20px;
-    color: #FFFF;
-}
-
-.tabela-albums {
-    width: 100%;
-    margin-left: 20px;
-    margin-top: 20px;
-}
-
-.album-info {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    font-size: 22px;
-    font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-right: -100px;
-    margin-top: 20px;
-}
-
-
-.faixa-header {
-    color: #000000b7;
-    font-size: 0.9em;
-}
-
-.mt-20 {
-    margin-top: 20px;
-}
 .form-container-adicao {
     padding: 20px;
     border: 1px solid #ccc;
@@ -120,8 +83,6 @@ label {
 
 .form-container-adicao form {
     margin-top: 10px;
-    display: flex;
-    flex-direction: column;
 }
 
 .form-container-adicao label {
@@ -149,38 +110,37 @@ label {
 .form-container-adicao input[type="submit"] {
     background-color: #1083cf;
     color: white;
-    padding: 10px 20px;
+    padding: 13px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
-
-.form-container-adicao input[type="submit"]:hover{
-    background-color: #0b1b63;
-}
-
-
-.botao {
-    border: 2px solid #1083cf;
+    font-size: 20px;
     border-radius: 20px;
-    background-color: #1083cf;
-    color: white;
-    padding: 10px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    cursor: pointer;
 }
 
-.botoes-adicionar{
+.button {
+    width: 150px;
+    height: 40px;
+    background-color: #1083cf;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 20px;
+    color: #fff;
+    font-size: 18px;
+}
+
+
+.botoes-adicionar {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     margin-top: 20px;
+    margin-bottom: 20px;
     margin-right: 10px;
 }
 
 .alertas {
+    margin-top: 10px;
     background-color: #f8d7da;
     color: #721c24;
     padding: 10px;
@@ -197,4 +157,72 @@ label {
 
 .alertas li {
     margin-bottom: 5px;
+}
+
+.album-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.column {
+    padding: 5px;
+    margin-right: 20px;
+}
+
+.column.id {
+    width: 40px;
+}
+
+.column.faixa {
+    flex-grow: 1;
+}
+
+.column.duracao {
+    width: 40px;
+    text-align: center;
+}
+
+.column.acao {
+    width: 40px;
+    text-align: center;
+}
+
+.album-title {
+    flex-grow: 1;
+    font-size: 18px;
+    color: #000000;
+}
+
+.delete-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 450px;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    align-items: center;
+}
+
+.exibir-informacoes {
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    color: #000000ad;
 }
